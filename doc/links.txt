@@ -1,0 +1,12 @@
+http://wiki.ros.org/lunar/Installation/Source
+https://gitlab.kitware.com/cmake/community/wikis/doc/tutorials/How-To-Find-Libraries
+
+
+http://wiki.ros.org/lunar/Installation/Ubuntu
+http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics
+
+http://wiki.ros.org/catkin/Tutorials/CreatingPackage
+
+http://erlerobot.github.io/erle_gitbook/en/ros/tutorials/creating_a_ros_package.html
+
+http://wiki.ros.org/IDEs
