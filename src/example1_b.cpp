@@ -15,9 +15,11 @@
 
 using namespace MY_LIB;
 
-void chatterCallback(const std_msgs::String::ConstPtr& msg) {
+void chatterCallback(const std_msgs::String::ConstPtr & msg) {
 	ROS_INFO("I heard : [%s]", msg->data.c_str());
 
+
+	//msg = (std_msgs::String::Ptr) 0;
 	TestPrint();
 
 }

@@ -47,18 +47,18 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
+ add_message_files(
+   FILES
+   chapter2_msg1.msg
 #   Message2.msg
-# )
+ )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+#add_service_files(
+#  FILES
+#  chapter2_srv1.srv
+  #Service2.srv
+#)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -206,8 +206,11 @@ link_directories (${MYLIB_DIR}/lib)
 
 add_executable(example1_a src/example1_a.cpp)
 add_executable(example1_b src/example1_b.cpp)
+add_executable(add_3_ints_server src/example2_a.cpp)
+
 
 target_link_libraries(example1_b Util)
 
 target_link_libraries(example1_a ${catkin_LIBRARIES})
 target_link_libraries(example1_b ${catkin_LIBRARIES})
+target_link_libraries(add_3_ints_server ${catkin_LIBRARIES})
