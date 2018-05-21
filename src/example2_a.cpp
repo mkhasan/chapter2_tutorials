@@ -1,33 +1,32 @@
 /*
- * example2_a.cpp
+ * example1_a.cpp
  *
- *  Created on: May 20, 2018
+ *  Created on: May 11, 2018
  *      Author: usrc
  */
 
-
-
 #include "ros/ros.h"
-#include "chapter2_tutorials/chapter2_srv1.h"
+#include "std_msgs/String.h"
 #include <sstream>
 
-
-bool add(chapter2_tutorials::chapter2_srv1::Request &req, chapter2_tutorials::chapter2_srv1::Response &resp) {
-	return true;
-}
 int main(int argc, char **argv) {
-	ros::init(argc, argv, "add_3_ints_server");
+	ros::init(argc, argv, "example1_a");
 	ros::NodeHandle n;
+	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("message", 1000);
+	ros::Rate loop_rate(10);
 
-	ros::ServiceServer service = n.advertiseService("add_3_ints", add);
-
-
-	ROS_INFO("Ready to add 3 ints.");
-	ros::spin();
-
+	while (ros::ok()) {
+		std_msgs::String msg;
+		std::stringstream ss;
+		ss << " I am the example1_a node ";
+		msg.data = ss.str();
+		//ROS_INFO("%s", msg.data.c_str());
+		chatter_pub.publish(msg);
+		ros::spinOnce();
+		loop_rate.sleep();
+	}
 
 	return 0;
 }
-
 
 

@@ -47,11 +47,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
- add_message_files(
-   FILES
-   chapter2_msg1.msg
+# add_message_files(
+#   FILES
+#   chapter2_msg1.msg
 #   Message2.msg
- )
+# )
 
 ## Generate services in the 'srv' folder
 #add_service_files(
@@ -206,11 +206,21 @@ link_directories (${MYLIB_DIR}/lib)
 
 add_executable(example1_a src/example1_a.cpp)
 add_executable(example1_b src/example1_b.cpp)
-add_executable(add_3_ints_server src/example2_a.cpp)
+
+add_executable(example2_a src/example2_a.cpp)
+add_executable(example2_b src/example2_b.cpp)
+
+#add_executable(add_3_ints_server src/example2_a.cpp)
 
 
 target_link_libraries(example1_b Util)
 
+target_link_libraries(example2_b Util)
+
 target_link_libraries(example1_a ${catkin_LIBRARIES})
 target_link_libraries(example1_b ${catkin_LIBRARIES})
-target_link_libraries(add_3_ints_server ${catkin_LIBRARIES})
+
+target_link_libraries(example2_a ${catkin_LIBRARIES})
+target_link_libraries(example2_b ${catkin_LIBRARIES})
+
+#target_link_libraries(add_3_ints_server ${catkin_LIBRARIES})
