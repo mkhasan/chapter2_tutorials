@@ -10,3 +10,5 @@ http://wiki.ros.org/catkin/Tutorials/CreatingPackage
 http://erlerobot.github.io/erle_gitbook/en/ros/tutorials/creating_a_ros_package.html
 
 http://wiki.ros.org/IDEs
+
+http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv

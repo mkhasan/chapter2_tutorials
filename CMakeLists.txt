@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -47,18 +48,18 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   chapter2_msg1.msg
+ add_message_files(
+   FILES
+   chapter2_msg1.msg
 #   Message2.msg
-# )
+ )
 
 ## Generate services in the 'srv' folder
-#add_service_files(
-#  FILES
-#  chapter2_srv1.srv
+add_service_files(
+  FILES
+  chapter2_srv1.srv
   #Service2.srv
-#)
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -68,10 +69,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -107,6 +108,8 @@ catkin_package(
 #  LIBRARIES chapter2_tutorials
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
+
+	CATKIN_DEPENDS message_runtime
 )
 
 ###########
@@ -210,7 +213,8 @@ add_executable(example1_b src/example1_b.cpp)
 add_executable(example2_a src/example2_a.cpp)
 add_executable(example2_b src/example2_b.cpp)
 
-#add_executable(add_3_ints_server src/example2_a.cpp)
+add_executable(add_3_ints_server src/add_3_ints_server.cpp)
+add_executable(add_3_ints_client src/add_3_ints_client.cpp)
 
 
 target_link_libraries(example1_b Util)
@@ -223,4 +227,6 @@ target_link_libraries(example1_b ${catkin_LIBRARIES})
 target_link_libraries(example2_a ${catkin_LIBRARIES})
 target_link_libraries(example2_b ${catkin_LIBRARIES})
 
-#target_link_libraries(add_3_ints_server ${catkin_LIBRARIES})
+target_link_libraries(add_3_ints_server ${catkin_LIBRARIES})
+target_link_libraries(add_3_ints_client ${catkin_LIBRARIES})
+

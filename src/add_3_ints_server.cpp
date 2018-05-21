@@ -13,6 +13,9 @@
 
 
 bool add(chapter2_tutorials::chapter2_srv1::Request &req, chapter2_tutorials::chapter2_srv1::Response &resp) {
+
+	resp.sum = req.A + req.B + req.C;
+	ROS_INFO("Got a call");
 	return true;
 }
 int main(int argc, char **argv) {
