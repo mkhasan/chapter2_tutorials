@@ -29,7 +29,7 @@ void chatterCallback(const chapter2_tutorials::chapter2_msg1::ConstPtr & msg1) {
 int main(int argc, char **argv) {
 	ros::init(argc, argv, "example1_b");
 	ros::NodeHandle n;
-	ros::Subscriber sub = n.subscribe("message", 1000, chatterCallback);
+	ros::Subscriber sub = n.subscribe("test_message", 1000, chatterCallback);
 	ros::spin();
 	return 0;
 
